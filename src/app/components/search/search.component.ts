@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FlightService } from '../../services/flight.service';
+import { Journey } from '../../core/models/journey.model';
 
 @Component({
   selector: 'app-search',
@@ -9,8 +11,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SearchComponent implements OnInit {
   public fb: FormBuilder = new FormBuilder();
   public flightForm: FormGroup = new FormGroup({});
-  public result: string = '';
+  public flightPath: Journey = {} as Journey;
   public errorMessage: string = 'No deben contener el mismo valor';
+  public fligthService = inject(FlightService);
 
   ngOnInit(): void {
     this.flightForm = this.fb.group(
@@ -40,7 +43,10 @@ export class SearchComponent implements OnInit {
     if (this.flightForm.valid) {
       const origin = this.flightForm.value.origin.toUpperCase();
       const destination = this.flightForm.value.destination.toUpperCase();
-      this.result = `Origin: ${origin}, Destination: ${destination}`;
+      this.fligthService.findRoute(origin, destination).subscribe((data: Journey) => {
+        console.log("🚀 ~ SearchComponent ~ this.fligthService.findRoute ~ data:", data)
+        this.flightPath = data;
+      })
     }
   }
 
