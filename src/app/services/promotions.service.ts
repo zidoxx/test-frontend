@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, inject } from "@angular/core";
-import { Promotion } from "../models/promotion.model";
+import { Promotion } from "../core/models/promotion.model";
 import { Observable } from "rxjs";
 
 @Injectable({

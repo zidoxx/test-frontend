@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Promotion } from '../../models/promotion.model';
+import { Promotion } from '../../core/models/promotion.model';
 
 @Component({
   selector: 'app-promotions-card',

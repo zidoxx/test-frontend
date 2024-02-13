@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Promotion } from '../../models/promotion.model';
+import { Promotion } from '../../core/models/promotion.model';
 import { PromotionsService } from '../../services/promotions.service';
 
 @Component({
