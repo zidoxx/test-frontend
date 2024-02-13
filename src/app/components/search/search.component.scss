@@ -9,9 +9,12 @@
     border-radius: 15px;
     padding: 1rem;
     box-shadow: 0 0 5px rgba($color: #737373, $alpha: 0.2);
-
-    input[type="text"]:hover {
-      border-bottom: var(--bs-green) solid 2px;
-    }
   }
+}
+
+.invalid {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: var(--bs-form-invalid-color);
 }

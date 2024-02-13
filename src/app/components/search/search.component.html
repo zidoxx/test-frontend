@@ -1,27 +1,56 @@
 <section class="search-container">
   <div class="search-box m-3">
     <form [formGroup]="flightForm" (ngSubmit)="onSubmit()">
-      <div class="d-flex justify-content-center align-items-center">
+      <div class="d-flex justify-content-center align-items-center flex-column">
         <div class="row g-2">
           <div class="col-12 col-sm-5">
             <input
               type="text"
               class="form-control"
               formControlName="origin"
+              [ngClass]="getValidationClass('origin')"
               placeholder="Origen (MZL)"
+              (input)="inputToUpperCase($event)"
             />
+            @if (flightForm.get('origin')?.invalid &&
+            flightForm.get('origin')?.touched) {
+            <div class="invalid-feedback">
+              {{ getValidationErrorMessage("origin") }}
+            </div>
+            }
           </div>
           <div class="col-12 col-sm-5">
             <input
               type="text"
               class="form-control"
               formControlName="destination"
+              [ngClass]="getValidationClass('destination')"
               placeholder="Destino (BCN)"
+              (input)="inputToUpperCase($event)"
             />
+            @if (flightForm.get('destination')?.invalid &&
+            flightForm.get('destination')?.touched) {
+            <div class="invalid-feedback">
+              {{ getValidationErrorMessage("destination") }}
+            </div>
+            }
           </div>
           <div class="col-12 col-sm-2">
-            <button class="btn btn-primary" type="submit">Buscar</button>
+            <button
+              class="btn btn-primary"
+              type="submit"
+              [disabled]="flightForm.invalid"
+            >
+              Buscar
+            </button>
           </div>
+        </div>
+        <div class="row">
+          @if(flightForm.hasError('sameValue')) {
+          <div class="invalid">
+            {{ errorMessage }}
+          </div>
+          }
         </div>
       </div>
     </form>
