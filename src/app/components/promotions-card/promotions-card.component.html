@@ -1,0 +1,10 @@
+<picture class="card-container">
+  <img [src]="getPromotionImg()" class="card-img" [alt]="promotion.name" />
+  <div class="card-promotion">
+    <div class="card-background">
+    <div class="card-promotion_location">{{ promotion.location }}</div>
+    <div class="card-promotion_caption"><small>{{ promotionCaption }}</small></div>
+    <div class="card-promotion_price"><small class="card-promotion_currency">{{ promotion.currency }} </small>{{ promotion.price }}</div>
+    </div>
+  </div>
+</picture>

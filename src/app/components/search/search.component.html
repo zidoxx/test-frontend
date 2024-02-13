@@ -1,20 +1,28 @@
 <section class="search-container">
-  <div class="search-box mt-3">
+  <div class="search-box m-3">
     <form [formGroup]="flightForm" (ngSubmit)="onSubmit()">
-      <div class="d-flex justify-content-center align-items-center gap-2">
-        <input
-          type="text"
-          class="form-control"
-          formControlName="origin"
-          placeholder="Origen (MZL)"
-        />
-        <input
-          type="text"
-          class="form-control"
-          formControlName="destination"
-          placeholder="Destino (BCN)"
-        />
-        <button class="btn btn-primary" type="submit">Buscar</button>
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="row g-2">
+          <div class="col-12 col-sm-5">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="origin"
+              placeholder="Origen (MZL)"
+            />
+          </div>
+          <div class="col-12 col-sm-5">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="destination"
+              placeholder="Destino (BCN)"
+            />
+          </div>
+          <div class="col-12 col-sm-2">
+            <button class="btn btn-primary" type="submit">Buscar</button>
+          </div>
+        </div>
       </div>
     </form>
   </div>

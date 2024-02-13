@@ -1,0 +1,6 @@
+<div class="promotions-container">
+  <p class="title text-center mt-1">{{ title }}</p>
+  <div class="promotions">
+  <app-promotions-card [promotion]="promotion" *ngFor="let promotion of promotions"></app-promotions-card>
+  </div>
+</div>
