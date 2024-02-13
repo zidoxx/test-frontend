@@ -1,0 +1,21 @@
+<section class="search-container">
+  <div class="search-box mt-3">
+    <form [formGroup]="flightForm" (ngSubmit)="onSubmit()">
+      <div class="d-flex justify-content-center align-items-center gap-2">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="origin"
+          placeholder="Origen (MZL)"
+        />
+        <input
+          type="text"
+          class="form-control"
+          formControlName="destination"
+          placeholder="Destino (BCN)"
+        />
+        <button class="btn btn-primary" type="submit">Buscar</button>
+      </div>
+    </form>
+  </div>
+</section>

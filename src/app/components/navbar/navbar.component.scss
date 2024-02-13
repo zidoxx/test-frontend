@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  background-color: var(--bs-white);
+  padding-left: 1rem;
+
+  a {
+    text-decoration: none;
+    color: var(--bs-gray-900);
+    font-size: small;
+    font-weight: 400;
+  }
+
+  a:hover {
+    color: var(--bs-primary);
+    border-bottom: var(--bs-primary) solid 2px;
+  }
+
+  &-logo{
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,17 @@
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .search-box {
+    background-color: rgba($color: #ffffff, $alpha: 0.3);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 0 5px rgba($color: #737373, $alpha: 0.2);
+
+    input[type="text"]:hover {
+      border-bottom: var(--bs-green) solid 2px;
+    }
+  }
+}
