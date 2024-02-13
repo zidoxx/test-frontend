@@ -9,10 +9,11 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { PromotionsComponent } from "./components/promotions/promotions.component";
 import { PromotionsCardComponent } from "./components/promotions-card/promotions-card.component";
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [AppComponent, PromotionsComponent, PromotionsCardComponent, SearchComponent, FooterComponent, NavbarComponent],
-  imports: [CommonModule, ReactiveFormsModule, BrowserModule, AppRoutingModule],
+  imports: [HttpClientModule, CommonModule, ReactiveFormsModule, BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

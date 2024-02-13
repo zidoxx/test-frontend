@@ -1,37 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Promotion } from '../../models/promotion.model';
+import { PromotionsService } from '../../services/promotions.service';
 
 @Component({
   selector: 'app-promotions',
   templateUrl: './promotions.component.html',
-  styleUrl: './promotions.component.scss'
+  styleUrl: './promotions.component.scss',
 })
-export class PromotionsComponent {
-
+export class PromotionsComponent implements OnInit {
   public title: string = 'Ofertas';
 
-  public promotions: Promotion[] = [
-    {
-      name: 'Promoción 1',
-      location: 'PEREIRA',
-      currency: 'USD',
-      price: 1000,
-      img: 'card1.jpeg'
-    },
-    {
-      name: 'Promoción 2',
-      location: 'MANIZALES',
-      currency: 'USD',
-      price: 2000,
-      img: 'card2.jpeg'
-    },
-    {
-      name: 'Promoción 3',
-      location: 'CARTAGENA',
-      currency: 'USD',
-      price: 3000,
-      img: 'card3.jpeg'
-    }
-  ]
+  public promotionsService = inject(PromotionsService);
 
+  public promotions: Promotion[] = [];
+
+  ngOnInit(): void {
+    this.getPromotions();
+  }
+
+  private getPromotions(): void {
+    this.promotionsService.getPromotions().subscribe((promotions: any) => {
+      this.promotions = promotions;
+    });
+  }
 }

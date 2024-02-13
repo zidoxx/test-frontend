@@ -1,12 +1,11 @@
 import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from "@angular/core";
+import { AppComponent } from "./app.component";
 
 const routes: Routes = [
     {
         path: '',
-        loadComponent() {
-            return import('./app.component').then(m => m.AppComponent);
-        },
+        component: AppComponent
     }
 ];
 
