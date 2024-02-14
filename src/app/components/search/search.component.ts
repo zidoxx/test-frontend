@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import FlightService from '../../services/flight.service';
 import { Journey } from '../../core/models/journey.model';
 import Swal from 'sweetalert2';
 import { FLIGHT_SERVICE } from '../../core/injection-token/injection-token';

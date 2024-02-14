@@ -16,16 +16,14 @@ export class CurrencyService {
     return this.currencySubject.asObservable();
   }
 
+  private conversionRates: Record<string, number> = {
+    'USD': 1,
+    'EUR': 1.12,
+    'COP': 3700
+  };
+
   public convertCurrency(value: number, currency: string): number {
-    if(currency === 'USD') {
-      return value;
-    }
-    if(currency === 'EUR') {
-      return value * 1.12;
-    }
-    if(currency === 'COP') {
-      return value * 3700;
-    }
-    return value * parseFloat(currency);
+    const conversionRate = this.conversionRates[currency];
+    return value * (conversionRate || parseFloat(currency) || 1);
   }
 }

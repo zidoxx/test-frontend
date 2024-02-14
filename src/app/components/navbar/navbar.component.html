@@ -5,8 +5,9 @@
   <a>Ofertas y destinos</a>
   </div>
   <div class="currencies">
-    <a (click)="setCurrency('USD')">USD</a>
-    <a (click)="setCurrency('COP')">COP</a>
-    <a (click)="setCurrency('EUR')">EUR</a>
+    <span class="badge bg-primary text-light me-3">Cambio de moneda <i class="bi bi-arrow-bar-right"></i></span>
+    <a class="badge bg-info text-dark pointer" (click)="setCurrency('USD')">USD</a>
+    <a class="badge bg-info text-dark pointer" (click)="setCurrency('COP')">COP</a>
+    <a class="badge bg-info text-dark pointer" (click)="setCurrency('EUR')">EUR</a>
   </div>
 </nav>

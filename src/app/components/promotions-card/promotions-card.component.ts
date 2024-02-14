@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Promotion } from '../../core/models/promotion.model';
+import { Currency } from '../../core/enums/currency.enum';
 
 @Component({
   selector: 'app-promotions-card',
@@ -15,16 +16,13 @@ export class PromotionsCardComponent {
     return `${this.promotionPath}${this.promotion.img}`;
   }
 
+  private promotions: Record<string, string> = {
+    [Currency.USD]: `${Currency.USD} `,
+    [Currency.EUR]: `${Currency.EUR} `,
+    [Currency.COP]: `${Currency.COP} `
+  };
+
   public getPromotionCurrency(currency: string): string {
-    if (currency === 'USD') {
-      return 'USD ';
-    }
-    if (currency === 'EUR') {
-      return 'EUR ';
-    }
-    if (currency === 'COP') {
-      return 'COP ';
-    }
-    return 'USD ';
+    return this.promotions[currency] || this.promotions[Currency.USD];
   }
 }

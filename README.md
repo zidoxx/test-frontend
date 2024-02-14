@@ -1,27 +1,52 @@
-# TestFrontend
+# Información del Proyecto
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+Este repositorio contiene una aplicación web desarrollada con una arquitectura estándar y programación orientada a objetos. A continuación, se detallan algunas características y prácticas utilizadas en el proyecto:
 
-## Development server
+Para ejecutar el proyecto primero se deben instalar las dependencias utilizando el comando `npm i` luego que todo este instalado se ejecuta el proyecto con `ng serve` o con `npm start`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Arquitectura de la solución
 
-## Code scaffolding
+La implementación sigue una arquitectura estándar para el desarrollo web.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Programación orientada a objetos
 
-## Build
+Se emplea programación orientada a objetos en el desarrollo de la aplicación.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Consumo REST API
 
-## Running unit tests
+La aplicación consume una API tipo REST para obtener y enviar datos.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Control de versiones
 
-## Running end-to-end tests
+Se utiliza Git para el control de versiones y el repositorio se encuentra alojado en GitHub.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Manejo de estilos en cascada CSS
 
-## Further help
+Los estilos se manejan utilizando SCSS para facilitar la estructuración y reutilización del código CSS.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Control de excepciones
+
+Se implementa el control de excepciones para mostrar alertas y mensajes de error en la aplicación.
+
+## Test unitarios
+
+No se realizan pruebas unitarias en este proyecto.
+
+## Uso de states manager
+
+Aunque no se utiliza NgRx para gestionar estados, se aprovecha el localStorage para guardar estados relevantes en la aplicación.
+
+## Uso de interceptors
+
+Se utiliza un interceptor de HTTP para mostrar un indicador de carga mientras se realizan peticiones a la API.
+
+## Uso de inyección de dependencias
+
+Se utiliza la inyección de dependencias para la utilización del servicio presentado en la aplicación.
+
+## Nomenclatura estándar
+
+Se sigue una nomenclatura estándar en el código, además se incorporan algunas convenciones de la versión 17, como el uso de "inject" para los servicios.
+
+---
+*Última actualización: [14/02/2024]*
