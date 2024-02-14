@@ -4,10 +4,10 @@ Este repositorio contiene una aplicación web desarrollada con una arquitectura 
 
 Para ejecutar el proyecto primero se deben instalar las dependencias utilizando el comando `npm i` luego que todo este instalado se ejecuta el proyecto con `ng serve` o con `npm start`
 
-[X] Problema 1 - Modelado de Clases
-[X] Problema 2 - Consumo de REST API - Se utilizo Rutas múltiples y de retorno
-[X] Problema 3 - Obtener Ruta
-[X] Problema 4 - Selección Moneda
+- [X] Problema 1 - Modelado de Clases
+- [X] Problema 2 - Consumo de REST API - Se utilizo Rutas múltiples y de retorno
+- [X] Problema 3 - Obtener Ruta
+- [X] Problema 4 - Selección Moneda
 
 ## Arquitectura de la solución
 
