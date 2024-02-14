@@ -14,4 +14,17 @@ export class PromotionsCardComponent {
   public getPromotionImg(): string {
     return `${this.promotionPath}${this.promotion.img}`;
   }
+
+  public getPromotionCurrency(currency: string): string {
+    if (currency === 'USD') {
+      return 'USD ';
+    }
+    if (currency === 'EUR') {
+      return 'EUR ';
+    }
+    if (currency === 'COP') {
+      return 'COP ';
+    }
+    return 'USD ';
+  }
 }

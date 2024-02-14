@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="table-primary">
+        <tr>
+          <th>Origen</th>
+          <th>Destino</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flightPathResults.flights">
+          <td>{{ flight.origin }}</td>
+          <td>{{ flight.destination }}</td>
+          <td>{{ flight.price | currency : this.currency : false : "1.0-2" }}</td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <strong
+              >Total: {{ flightPathResults.price | currency : this.currency : false : "1.0-2" }}</strong
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

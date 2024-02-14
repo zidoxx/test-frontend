@@ -1,5 +1,12 @@
 <nav class="navbar">
+  <div class="links">
   <img class="navbar-logo" src="../../../assets/images/logo.png" alt="brand-logo" aria-label="brand-logo">
-  <a routerLink="search">Reservar</a>
-  <a routerLink="about">Ofertas y destinos</a>
+  <a>Reservar</a>
+  <a>Ofertas y destinos</a>
+  </div>
+  <div class="currencies">
+    <a (click)="setCurrency('USD')">USD</a>
+    <a (click)="setCurrency('COP')">COP</a>
+    <a (click)="setCurrency('EUR')">EUR</a>
+  </div>
 </nav>

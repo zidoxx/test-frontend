@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CurrencyService } from '../../services/currency.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-
+  public currencyService = inject(CurrencyService);
+  public setCurrency(currency: string): void {
+    this.currencyService.changeCurrency(currency);
+  }
 }

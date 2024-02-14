@@ -1,12 +1,25 @@
 .navbar {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+  justify-content: space-between;
+  gap: 2rem;
   align-items: center;
   height: 60px;
   width: 100%;
   background-color: var(--bs-white);
   padding-left: 1rem;
+
+  .links{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .currencies{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 2rem;
+  }
 
   a {
     text-decoration: none;

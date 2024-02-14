@@ -1,7 +1,10 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, Inject, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FlightService } from '../../services/flight.service';
+import FlightService from '../../services/flight.service';
 import { Journey } from '../../core/models/journey.model';
+import Swal from 'sweetalert2';
+import { FLIGHT_SERVICE } from '../../core/injection-token/injection-token';
+import { IFlight } from '../../core/interfaces/flight.interface';
 
 @Component({
   selector: 'app-search',
@@ -13,7 +16,12 @@ export class SearchComponent implements OnInit {
   public flightForm: FormGroup = new FormGroup({});
   public flightPath: Journey = {} as Journey;
   public errorMessage: string = 'No deben contener el mismo valor';
-  public fligthService = inject(FlightService);
+  public showSearchResults: boolean = false;
+  public flightService: IFlight = {} as IFlight;
+
+  constructor(@Inject(FLIGHT_SERVICE) flightService: IFlight) {
+    this.flightService = flightService;
+  }
 
   ngOnInit(): void {
     this.flightForm = this.fb.group(
@@ -36,6 +44,7 @@ export class SearchComponent implements OnInit {
 
   public inputToUpperCase(event: any) {
     const input = event.target as HTMLInputElement;
+    this.flightForm.markAllAsTouched();
     input.value = input.value.toUpperCase();
   }
 
@@ -43,9 +52,17 @@ export class SearchComponent implements OnInit {
     if (this.flightForm.valid) {
       const origin = this.flightForm.value.origin.toUpperCase();
       const destination = this.flightForm.value.destination.toUpperCase();
-      this.fligthService.findRoute(origin, destination).subscribe((data: Journey) => {
-        console.log("🚀 ~ SearchComponent ~ this.fligthService.findRoute ~ data:", data)
+      this.flightService.findRoute(origin, destination).subscribe((data: Journey) => {
+        if(data) {
+          this.showSearchResults = true;
+        }
         this.flightPath = data;
+      }, (error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error
+        })
       })
     }
   }

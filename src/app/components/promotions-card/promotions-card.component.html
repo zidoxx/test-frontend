@@ -4,7 +4,7 @@
     <div class="card-background">
     <div class="card-promotion_location">{{ promotion.location }}</div>
     <div class="card-promotion_caption"><small>{{ promotionCaption }}</small></div>
-    <div class="card-promotion_price"><small class="card-promotion_currency">{{ promotion.currency }} </small>{{ promotion.price }}</div>
+    <div class="card-promotion_price">{{ promotion.price | currency : getPromotionCurrency(promotion.currency) : false : "1.0-2" }}</div>
     </div>
   </div>
 </picture>

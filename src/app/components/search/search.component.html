@@ -56,5 +56,8 @@
     </form>
   </div>
 </section>
-<section class="search-result" *ngIf="flightPath">
-</section>
+@if (showSearchResults) {
+<app-search-results
+  [flightPathResults]="flightPath"
+></app-search-results>
+}

@@ -3,16 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Journey } from '../core/models/journey.model';
 import { ResponseData } from '../core/models/response-data.model';
+import { IFlight } from '../core/interfaces/flight.interface';
 @Injectable({
   providedIn: 'root',
 })
-export class FlightService {
+export default class FlightService implements IFlight {
   private flightsUrl = 'https://recruiting-api.newshore.es/api/flights/2';
   private errorMessage = 'No se pudieron cargar los vuelos';
   private pathErrorMessage = 'No se puede calcular la ruta.';
   public http = inject(HttpClient);
 
-  private getFlights(): Observable<ResponseData[]> {
+  public getFlights(): Observable<ResponseData[]> {
     return this.http.get<ResponseData[]>(this.flightsUrl);
   }
 

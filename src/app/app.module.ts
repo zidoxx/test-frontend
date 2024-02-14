@@ -13,6 +13,8 @@ import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { flightProvider } from './core/injection-token/injection-token';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
     PromotionsComponent,
     PromotionsCardComponent,
     SearchComponent,
+    SearchResultsComponent,
     FooterComponent,
     NavbarComponent,
   ],
@@ -33,6 +36,7 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
     AppRoutingModule,
   ],
   providers: [
+    flightProvider,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptor,
